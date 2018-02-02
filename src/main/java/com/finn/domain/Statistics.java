@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class Statistics {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     @Column(unique = true, nullable = false)
     private Long statId;
 

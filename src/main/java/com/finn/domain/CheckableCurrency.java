@@ -11,7 +11,7 @@ import java.util.Date;
 @Table(name = "checkcurrency")
 public class CheckableCurrency {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
