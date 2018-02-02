@@ -13,15 +13,16 @@ import java.time.LocalDate;
 public class Statistics {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Statistics_Seq")
+    @SequenceGenerator(name = "Statistics_Seq", sequenceName = "Statistics_Seq", allocationSize = 1)
     @Column(unique = true, nullable = false)
     private Long statId;
 
     @Enumerated(EnumType.STRING)
     private Currency currency;
 
-    @Column(nullable= false)
-    @Digits(integer=9, fraction=7)
+    @Column(nullable = false)
+    @Digits(integer = 9, fraction = 7)
     private BigDecimal price;
 
     private LocalDate date;

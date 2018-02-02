@@ -11,7 +11,8 @@ import java.util.Date;
 @Table(name = "checkcurrency")
 public class CheckableCurrency {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CheckableCurrency_Seq")
+    @SequenceGenerator(name = "CheckableCurrency_Seq", sequenceName = "CheckableCurrency_Seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
